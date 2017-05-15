@@ -1,15 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import headConfig from '../config/head-config'
 import NavBar from '../components/NavBar.jsx'
 
-export default React.createClass({
-  propTypes: {
-    children: React.PropTypes.element
-  },
-
-  render: function () {
+class App extends React.Component {
+  render () {
     return (
       <div>
         <Helmet
@@ -18,8 +15,16 @@ export default React.createClass({
           meta={headConfig.HEAD_META}
           />
         <NavBar />
-        { this.props.children }
+        <div class='container'>
+          { this.props.children }
+        </div>
       </div>
     )
   }
-})
+}
+
+App.propTypes = {
+  children: PropTypes.element
+}
+
+export default App

@@ -10,12 +10,12 @@ const store = configureStore()
 
 const history = syncHistoryWithStore(browserHistory, store)
 
-export default React.createClass({
-  render: function () {
+export default class Application extends React.Component {
+  render () {
     return (
       <Provider store={store}>
         <Router history={history}>{routes}</Router>
       </Provider>
     )
   }
-})
+}

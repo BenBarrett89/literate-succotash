@@ -4,10 +4,8 @@ import { Col, Grid, Row, Well } from 'react-bootstrap'
 
 import HomeConstants from '../constants/home-constants'
 
-// require('../sass/components/home.scss')
-
-export default React.createClass({
-  render: function () {
+class Home extends React.Component {
+  render () {
     return (
       <Grid className='home-div'>
         <Helmet title='Home' />
@@ -22,4 +20,6 @@ export default React.createClass({
       </Grid>
     )
   }
-})
+}
+
+export default Home

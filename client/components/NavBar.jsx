@@ -3,8 +3,8 @@ import { Nav, Navbar } from 'react-bootstrap'
 
 import NavLink from './NavLink.jsx'
 
-export default React.createClass({
-  render: function () {
+class NavBar extends React.Component {
+  render () {
     return (
       <Navbar inverse collapseOnSelect>
         <Navbar.Header>
@@ -21,4 +21,6 @@ export default React.createClass({
       </Navbar>
     )
   }
-})
+}
+
+export default NavBar

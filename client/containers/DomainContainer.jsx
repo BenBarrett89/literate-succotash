@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import { decrement, increment, random, reset } from '../actions/domain-actions'
 import Domain from '../components/Domain.jsx'
 
-export const DomainPage = React.createClass({
-  render: function () {
+class DomainPage extends React.Component {
+  render () {
     return (
       <div>
         <Helmet title='Domain' />
@@ -14,7 +14,7 @@ export const DomainPage = React.createClass({
       </div>
     )
   }
-})
+}
 
 function mapStateToProps (state) {
   return {
@@ -40,4 +40,7 @@ function mapDispatchToProps (dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DomainPage)
+module.exports = {
+  DomainContainer: connect(mapStateToProps, mapDispatchToProps)(DomainPage),
+  DomainPage
+}
