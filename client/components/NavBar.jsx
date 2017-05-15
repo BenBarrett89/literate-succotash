@@ -1,13 +1,24 @@
 import React from 'react'
-import { Nav, NavItem } from 'react-bootstrap'
+import { Nav, Navbar } from 'react-bootstrap'
+
+import NavLink from './NavLink.jsx'
 
 export default React.createClass({
   render: function () {
     return (
-      <Nav bsStyle='tabs' className='nav-bar'>
-        <NavItem href='/'>Home</NavItem>
-        <NavItem href='/domain'>Domain</NavItem>
-      </Nav>
+      <Navbar inverse collapseOnSelect>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href='/'>Literate Succotash</a>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav>
+            <NavLink to='/domain'>Domain</NavLink>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     )
   }
 })

@@ -17,7 +17,6 @@ export default React.createClass({
           titleTemplate={headConfig.TITLE_TEMPLATE}
           meta={headConfig.HEAD_META}
           />
-        <h1 className='title'>Literate Succotash</h1>
         <NavBar />
         { this.props.children }
       </div>

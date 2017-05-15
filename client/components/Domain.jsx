@@ -3,7 +3,7 @@ import { Button, Col, Grid, Panel, Row } from 'react-bootstrap'
 
 import DomainConstants from '../constants/domain-constants'
 
-require('../sass/components/domain.scss')
+// require('../sass/components/domain.scss')
 
 export default React.createClass({
   propTypes: {

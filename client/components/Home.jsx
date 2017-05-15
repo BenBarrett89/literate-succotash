@@ -4,7 +4,7 @@ import { Col, Grid, Row, Well } from 'react-bootstrap'
 
 import HomeConstants from '../constants/home-constants'
 
-require('../sass/components/home.scss')
+// require('../sass/components/home.scss')
 
 export default React.createClass({
   render: function () {
