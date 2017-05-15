@@ -4,8 +4,8 @@ import { Link } from 'react-router'
 class NavLink extends React.Component {
   render () {
     return (
-      <li class='nav-item'>
-        <Link {...this.props} />
+      <li className='nav-item'>
+        <Link to={this.props.to}>{this.props.text}</Link>
       </li>
     )
   }

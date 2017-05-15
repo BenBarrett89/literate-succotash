@@ -15,7 +15,7 @@ class NavBar extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavLink to='/domain'>Domain</NavLink>
+            <NavLink to='/domain'text='Domain' />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

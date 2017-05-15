@@ -7,7 +7,7 @@ import HomeConstants from '../constants/home-constants'
 class Home extends React.Component {
   render () {
     return (
-      <Grid className='home-div'>
+      <Grid>
         <Helmet title='Home' />
         <Row>
           <Col xs={12}>

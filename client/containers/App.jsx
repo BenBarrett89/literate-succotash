@@ -15,7 +15,7 @@ class App extends React.Component {
           meta={headConfig.HEAD_META}
           />
         <NavBar />
-        <div class='container'>
+        <div className='container'>
           { this.props.children }
         </div>
       </div>
