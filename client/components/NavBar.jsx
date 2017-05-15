@@ -1,8 +1,6 @@
 import React from 'react'
 import { Nav, NavItem } from 'react-bootstrap'
 
-require('../sass/components/nav-bar.scss')
-
 export default React.createClass({
   render: function () {
     return (
