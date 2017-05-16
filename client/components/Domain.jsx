@@ -1,14 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Col, Grid, Panel, Row, Table } from 'react-bootstrap'
+import { Button, ButtonGroup, Col, Grid, Panel, Row, Table } from 'react-bootstrap'
 
 import DomainConstants from '../constants/domain-constants'
 
 class Domain extends React.Component {
-  componentWillUnmount () {
-    this.props.reset()
-  }
-
   getDomainsArray () {
     return this.props.domains || []
   }
@@ -23,13 +19,16 @@ class Domain extends React.Component {
         </Row>
         <Row>
           <Col xs={12} md={2}>
-            <Panel header='Count'>
+            <Panel header='Count' bsStyle='primary'>
               <p>{DomainConstants.counterText}<span id={DomainConstants.valueSpanId}>{this.props.value}</span>
               </p>
-              <Button bsStyle='default' id={DomainConstants.incrementButtonId} onClick={() => this.props.increment()}>{DomainConstants.incrementButtonText}</Button>
-              <Button bsStyle='default' id={DomainConstants.decrementButtonId} onClick={() => this.props.decrement()}>{DomainConstants.decrementButtonText}</Button>
-              <Button bsStyle='warning' id={DomainConstants.resetButtonId} onClick={() => this.props.reset()}>{DomainConstants.resetButtonText}</Button>
-              <Button bsStyle='info' id={DomainConstants.randomButtonId} onClick={() => this.props.random()}>{DomainConstants.randomButtonText}</Button>
+              <ButtonGroup vertical block >
+                <Button bsStyle='default' id={DomainConstants.incrementButtonId} onClick={() => this.props.increment()}>{DomainConstants.incrementButtonText}</Button>
+                <Button bsStyle='default' id={DomainConstants.decrementButtonId} onClick={() => this.props.decrement()}>{DomainConstants.decrementButtonText}</Button>
+                <Button bsStyle='warning' id={DomainConstants.resetButtonId} onClick={() => this.props.reset()}>{DomainConstants.resetButtonText}</Button>
+                <Button bsStyle='info' id={DomainConstants.randomButtonId} onClick={() => this.props.random()}>{DomainConstants.randomButtonText}</Button>
+                <Button bsStyle='primary' id={DomainConstants.postButtonId} onClick={() => this.props.random()}>{DomainConstants.postButtonText}</Button>
+              </ButtonGroup>
             </Panel>
           </Col>
           <Col xs={12} md={10}>
@@ -39,6 +38,7 @@ class Domain extends React.Component {
                   <tr>
                     <th>Time</th>
                     <th>Count</th>
+                    <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -47,6 +47,7 @@ class Domain extends React.Component {
                       <tr key={key}>
                         <td>{domain.time}</td>
                         <td>{domain.value}</td>
+                        <td><Button bsStyle='danger' block id={`${DomainConstants.deleteButtonId}-${key}`}>{DomainConstants.deleteButtonText}</Button></td>
                       </tr>)
                   })}
                 </tbody>

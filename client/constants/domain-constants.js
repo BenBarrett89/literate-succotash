@@ -2,8 +2,12 @@ const backToHomeLinkText = 'Back to Home'
 const counterText = 'Counter: '
 const decrementButtonId = 'decrement'
 const decrementButtonText = 'Decrement'
+const deleteButtonId = 'delete'
+const deleteButtonText = 'Delete'
 const incrementButtonId = 'increment'
 const incrementButtonText = 'Increment'
+const postButtonId = 'post'
+const postButtonText = 'Post'
 const randomButtonId = 'random'
 const randomButtonText = 'Random'
 const resetButtonId = 'reset'
@@ -16,8 +20,12 @@ module.exports = {
   counterText,
   decrementButtonId,
   decrementButtonText,
+  deleteButtonId,
+  deleteButtonText,
   incrementButtonId,
   incrementButtonText,
+  postButtonId,
+  postButtonText,
   randomButtonId,
   randomButtonText,
   resetButtonId,
