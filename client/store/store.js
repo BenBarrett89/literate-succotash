@@ -3,6 +3,7 @@ import { routerMiddleware } from 'react-router-redux'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import createSagaMiddleware, { END } from 'redux-saga'
+import { init } from '../actions/init-actions'
 
 import db from '../database/dexie'
 
@@ -24,10 +25,11 @@ export function configureStore (initialState = {}) {
   )
 
   db.open().catch(error => console.log(`Error opening Dexie database: ${error}`))
-  const time = new Date().toString()
-  db.domains.add({value: 10, time: time})
 
   runSagas(sagaMiddleware, db)
+
+  // run the init saga at application start time
+  store.dispatch(init())
 
   store.close = () => store.dispatch(END)
 

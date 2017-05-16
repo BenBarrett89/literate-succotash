@@ -9,6 +9,10 @@ class Domain extends React.Component {
     this.props.reset()
   }
 
+  getDomainsArray () {
+    return this.props.domains || []
+  }
+
   render () {
     return (
       <Grid>
@@ -28,9 +32,25 @@ class Domain extends React.Component {
               <Button bsStyle='info' id={DomainConstants.randomButtonId} onClick={() => this.props.random()}>{DomainConstants.randomButtonText}</Button>
             </Panel>
           </Col>
-          <Col xs={12} md={2}>
+          <Col xs={12} md={10}>
             <Panel header='Results'>
-              <Table />
+              <Table striped bordered condensed hover>
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.getDomainsArray().map((domain, key) => {
+                    return (
+                      <tr key={key}>
+                        <td>{domain.time}</td>
+                        <td>{domain.value}</td>
+                      </tr>)
+                  })}
+                </tbody>
+              </Table>
             </Panel>
           </Col>
         </Row>
@@ -42,8 +62,8 @@ class Domain extends React.Component {
 Domain.propTypes = {
   domains: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string,
-      count: PropTypes.number,
+      id: PropTypes.number,
+      value: PropTypes.number,
       time: PropTypes.string
     })
   ),
