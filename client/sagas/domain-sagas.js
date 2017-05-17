@@ -2,6 +2,15 @@ import { call, put } from 'redux-saga/effects'
 import { decrement, increment, loadDomains, setDomains } from '../actions/domain-actions'
 
 const domainSagas = (randomService, domainService) => {
+  function* deleteDomainSaga (action) {
+    try {
+      yield call(domainService.deleteDomain, action.index)
+      yield put(loadDomains())
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   function* loadDomainsSaga () {
     try {
       const domains = yield call(domainService.loadDomains)
@@ -30,6 +39,7 @@ const domainSagas = (randomService, domainService) => {
   }
 
   return {
+    deleteDomainSaga,
     loadDomainsSaga,
     postDomainSaga,
     randomSaga

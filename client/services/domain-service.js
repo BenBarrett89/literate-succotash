@@ -1,4 +1,10 @@
 const domainService = db => {
+  const deleteDomain = index => {
+    return new Promise((resolve, reject) => {
+      resolve(db.domains.where('id').anyOf(index).delete())
+    })
+  }
+
   const loadDomains = () => {
     return new Promise((resolve, reject) => {
       resolve(db.domains.toArray())
@@ -16,6 +22,7 @@ const domainService = db => {
   }
 
   return {
+    deleteDomain,
     loadDomains,
     postDomain
   }

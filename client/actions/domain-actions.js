@@ -1,8 +1,15 @@
-import { typeDecrement, typeIncrement, typeLoadDomains, typePostDomain, typeRandom, typeReset, typeSetDomains } from '../constants/action-constants'
+import { typeDecrement, typeDeleteDomain, typeIncrement, typeLoadDomains, typePostDomain, typeRandom, typeReset, typeSetDomains } from '../constants/action-constants'
 
 export function decrement () {
   return {
     type: typeDecrement
+  }
+}
+
+export function deleteDomain (index) {
+  return {
+    type: typeDeleteDomain,
+    index
   }
 }
 
@@ -18,7 +25,7 @@ export function loadDomains () {
   }
 }
 
-export function post (domain) {
+export function postDomain (domain) {
   return {
     type: typePostDomain,
     domain

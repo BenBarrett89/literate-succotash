@@ -47,7 +47,7 @@ class Domain extends React.Component {
                       <tr key={key}>
                         <td>{domain.time}</td>
                         <td>{domain.value}</td>
-                        <td><Button bsStyle='danger' block id={`${DomainConstants.deleteButtonId}-${key}`}>{DomainConstants.deleteButtonText}</Button></td>
+                        <td><Button bsStyle='danger' block id={`${DomainConstants.deleteButtonId}-${key}`} onClick={() => this.props.delete(domain.id)}>{DomainConstants.deleteButtonText}</Button></td>
                       </tr>)
                   })}
                 </tbody>
@@ -70,7 +70,9 @@ Domain.propTypes = {
   ),
   value: PropTypes.number,
   decrement: PropTypes.func,
+  delete: PropTypes.func,
   increment: PropTypes.func,
+  post: PropTypes.func,
   random: PropTypes.func,
   reset: PropTypes.func
 }
