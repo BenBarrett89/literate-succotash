@@ -5,8 +5,19 @@ const domainService = db => {
     })
   }
 
+  const postDomain = domain => {
+    return new Promise((resolve, reject) => {
+      const now = new Date().toString()
+      resolve(db.domains.put({
+        time: now,
+        value: domain
+      }))
+    })
+  }
+
   return {
-    loadDomains
+    loadDomains,
+    postDomain
   }
 }
 

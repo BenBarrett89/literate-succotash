@@ -27,7 +27,7 @@ class Domain extends React.Component {
                 <Button bsStyle='default' id={DomainConstants.decrementButtonId} onClick={() => this.props.decrement()}>{DomainConstants.decrementButtonText}</Button>
                 <Button bsStyle='warning' id={DomainConstants.resetButtonId} onClick={() => this.props.reset()}>{DomainConstants.resetButtonText}</Button>
                 <Button bsStyle='info' id={DomainConstants.randomButtonId} onClick={() => this.props.random()}>{DomainConstants.randomButtonText}</Button>
-                <Button bsStyle='primary' id={DomainConstants.postButtonId} onClick={() => this.props.random()}>{DomainConstants.postButtonText}</Button>
+                <Button bsStyle='primary' id={DomainConstants.postButtonId} onClick={() => this.props.post(this.props.value)}>{DomainConstants.postButtonText}</Button>
               </ButtonGroup>
             </Panel>
           </Col>

@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 
-import { decrement, increment, random, reset } from '../actions/domain-actions'
+import { decrement, increment, post, random, reset } from '../actions/domain-actions'
 import Domain from '../components/Domain.jsx'
 
 class DomainPage extends React.Component {
@@ -30,6 +30,9 @@ function mapDispatchToProps (dispatch) {
     },
     increment: () => {
       dispatch(increment())
+    },
+    post: domain => {
+      dispatch(post(domain))
     },
     random: () => {
       dispatch(random())

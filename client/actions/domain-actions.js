@@ -1,4 +1,4 @@
-import { typeDecrement, typeIncrement, typeLoadDomains, typeRandom, typeReset, typeSetDomains } from '../constants/action-constants'
+import { typeDecrement, typeIncrement, typeLoadDomains, typePostDomain, typeRandom, typeReset, typeSetDomains } from '../constants/action-constants'
 
 export function decrement () {
   return {
@@ -15,6 +15,13 @@ export function increment () {
 export function loadDomains () {
   return {
     type: typeLoadDomains
+  }
+}
+
+export function post (domain) {
+  return {
+    type: typePostDomain,
+    domain
   }
 }
 
