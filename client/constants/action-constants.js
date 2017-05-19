@@ -9,6 +9,7 @@ const typePostDomain = 'DOMAIN_POST_DOMAIN'
 const typePutCharacter = 'CHARACTERS_PUT_CHARACTER'
 const typeRandom = 'DOMAIN_RANDOM'
 const typeReset = 'DOMAIN_RESET'
+const typeSetCharacters = 'CHARACTERS_SET_CHARACTERS'
 const typeSetDomains = 'DOMAIN_SET_DOMAINS'
 
 module.exports = {
@@ -23,5 +24,6 @@ module.exports = {
   typePutCharacter,
   typeRandom,
   typeReset,
+  typeSetCharacters,
   typeSetDomains
 }

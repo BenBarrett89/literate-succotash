@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 
-// import { deleteCharacter } from '../actions/character-actions'
+import { addCharacter, deleteCharacter } from '../actions/character-actions'
 import Characters from '../components/Characters.jsx'
 
 class CharactersPage extends React.Component {
@@ -18,15 +18,18 @@ class CharactersPage extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    // domains: state.domain.domains
+    characters: state.characters.characters
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    // decrement: () => {
-    //   dispatch(decrement())
-    // }
+    addCharacter: character => {
+      dispatch(addCharacter(character))
+    },
+    deleteCharacter: id => {
+      dispatch(deleteCharacter(id))
+    }
   }
 }
 

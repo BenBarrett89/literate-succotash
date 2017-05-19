@@ -1,4 +1,4 @@
-import { typeDeleteCharacter, typeLoadCharacters, typePutCharacter } from '../constants/action-constants'
+import { typeDeleteCharacter, typeLoadCharacters, typePutCharacter, typeSetCharacters } from '../constants/action-constants'
 
 export function deleteCharacter (id) {
   return {
@@ -17,5 +17,12 @@ export function putCharacter (character) {
   return {
     type: typePutCharacter,
     character
+  }
+}
+
+export function setCharacters (characters) {
+  return {
+    type: typeSetCharacters,
+    characters
   }
 }
