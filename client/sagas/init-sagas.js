@@ -1,9 +1,9 @@
 import { put } from 'redux-saga/effects'
-import { loadDomains } from '../actions/domain-actions'
+import { loadCharacters } from '../actions/character-actions'
 
 const initSagas = () => {
   function* initSaga () {
-    yield put(loadDomains())
+    yield put(loadCharacters())
   }
 
   return {

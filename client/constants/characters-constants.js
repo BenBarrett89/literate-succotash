@@ -1,7 +1,7 @@
-const charactersTitleId = 'charactersTitle'
-const charactersTitleText = 'Characters'
+const titleId = 'charactersTitle'
+const titleText = 'Characters'
 
 module.exports = {
-  charactersTitleId,
-  charactersTitleText
+  titleId,
+  titleText
 }

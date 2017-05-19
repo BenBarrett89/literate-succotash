@@ -1,23 +1,39 @@
 import React from 'react'
-import { Col, Grid, Row, Well } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { Col, Grid, Row } from 'react-bootstrap'
+
+import Character from './Character.jsx'
 
 import CharactersConstants from '../constants/characters-constants'
 
 class Characters extends React.Component {
+  getCharacters () {
+    return this.props.characters || []
+  }
+
   render () {
     return (
       <Grid>
         <Row>
           <Col xs={12}>
-            <h2><span id={CharactersConstants.charactersTitleId}>{CharactersConstants.charactersTitleText}</span></h2>
-            <Well>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan libero at arcu feugiat pulvinar.</p>
-            </Well>
+            <h2 id={CharactersConstants.titleId}>{CharactersConstants.titleText}</h2>
           </Col>
+        </Row>
+        <Row>
+          {this.getCharacters().map((character, key) => {
+            console.log(character)
+            return <Character key={key} character={character} />
+          })}
         </Row>
       </Grid>
     )
   }
+}
+
+Characters.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object),
+  addCharacter: PropTypes.func,
+  deleteCharacter: PropTypes.func
 }
 
 export default Characters

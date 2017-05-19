@@ -13,7 +13,6 @@ const charactersService = db => {
 
   const putCharacter = character => {
     return new Promise((resolve, reject) => {
-      const now = new Date().toString()
       resolve(db.characters.put(character))
     })
   }
@@ -22,6 +21,7 @@ const charactersService = db => {
     deleteCharacter,
     loadCharacters,
     putCharacter
+  }
 }
 
 module.exports = {
