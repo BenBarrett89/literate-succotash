@@ -21,8 +21,7 @@ class Characters extends React.Component {
         </Row>
         <Row>
           {this.getCharacters().map((character, key) => {
-            console.log(character)
-            return <Character key={key} character={character} />
+            return (<Character key={key} character={character} delete={this.props.deleteCharacter} />)
           })}
         </Row>
       </Grid>
