@@ -10,7 +10,7 @@ class Character extends React.Component {
           <Accordion>
             <Panel header='Description' eventKey='1'>{this.props.character.description}</Panel>
           </Accordion>
-          <Button bsStyle='danger' block onClick={() => this.props.delete(this.props.character.id)}>Delete</Button>
+          <Button bsStyle='danger' style={{'float': 'right'}} onClick={() => this.props.delete(this.props.character.id)}>Delete</Button>
         </Panel>
       </Col>
     )
