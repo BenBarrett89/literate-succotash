@@ -29,8 +29,7 @@ class Character extends React.Component {
               <Button bsStyle='primary' bsSize='xsmall' style={{'float': 'right'}} onClick={() => console.log('Do the edit')}>Edit</Button>
             </Panel>
             <Panel header='Relationships' eventKey='6'>
-              <p>Need to let characters have these</p>
-              <Button bsStyle='primary' bsSize='xsmall' style={{'float': 'right'}} onClick={() => console.log('Do the edit')}>Edit</Button>
+              <p>Need to let characters have these but needs new store schema</p>
             </Panel>
           </Accordion>
           <ButtonGroup style={{'float': 'right'}}>

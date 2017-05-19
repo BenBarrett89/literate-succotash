@@ -3,7 +3,7 @@ import Dexie from 'dexie'
 const db = new Dexie('literate-succotash')
 db.version(1).stores({
   domains: `++id, value, time`,
-  characters: `++id, name, description`
+  characters: `++id, name, description, motivation, goal, conflict, epiphany, *relationships`
 })
 
 export default db

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Col, Grid, Row } from 'react-bootstrap'
 
 import Character from './Character.jsx'
+import NewCharacter from './NewCharacter.jsx'
 
 import CharactersConstants from '../constants/characters-constants'
 
@@ -23,6 +24,7 @@ class Characters extends React.Component {
           {this.getCharacters().map((character, key) => {
             return (<Character key={key} character={character} delete={this.props.deleteCharacter} />)
           })}
+          <NewCharacter save={this.props.addCharacter} />
         </Row>
       </Grid>
     )
