@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 
-import { addCharacter, deleteCharacter } from '../actions/character-actions'
+import { deleteCharacter, putCharacter, setResetFormFlag } from '../actions/character-actions'
 import Characters from '../components/Characters.jsx'
 
 class CharactersPage extends React.Component {
@@ -18,17 +18,21 @@ class CharactersPage extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    characters: state.characters.characters
+    characters: state.characters.characters,
+    resetForm: state.characters.resetForm
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
     addCharacter: character => {
-      dispatch(addCharacter(character))
+      dispatch(putCharacter(character))
     },
     deleteCharacter: id => {
       dispatch(deleteCharacter(id))
+    },
+    setResetForm: flag => {
+      dispatch(setResetFormFlag(flag))
     }
   }
 }

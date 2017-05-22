@@ -13,19 +13,19 @@ class Character extends React.Component {
               <Button bsStyle='primary' bsSize='xsmall' style={{'float': 'right'}} onClick={() => console.log('Do the edit')}>Edit</Button>
             </Panel>
             <Panel header='Motivation' eventKey='2'>
-              <p>Need to let characters have these</p>
+              <p>{this.props.character.motivation}</p>
               <Button bsStyle='primary' bsSize='xsmall' style={{'float': 'right'}} onClick={() => console.log('Do the edit')}>Edit</Button>
             </Panel>
             <Panel header='Goal' eventKey='3'>
-              <p>Need to let characters have these</p>
+              <p>{this.props.character.goal}</p>
               <Button bsStyle='primary' bsSize='xsmall' style={{'float': 'right'}} onClick={() => console.log('Do the edit')}>Edit</Button>
             </Panel>
             <Panel header='Conflict' eventKey='4'>
-              <p>Need to let characters have these</p>
+              <p>{this.props.character.conflict}</p>
               <Button bsStyle='primary' bsSize='xsmall' style={{'float': 'right'}} onClick={() => console.log('Do the edit')}>Edit</Button>
             </Panel>
             <Panel header='Epiphany' eventKey='5'>
-              <p>Need to let characters have these</p>
+              <p>{this.props.character.epiphany}</p>
               <Button bsStyle='primary' bsSize='xsmall' style={{'float': 'right'}} onClick={() => console.log('Do the edit')}>Edit</Button>
             </Panel>
             <Panel header='Relationships' eventKey='6'>

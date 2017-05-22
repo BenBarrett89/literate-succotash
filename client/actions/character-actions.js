@@ -1,4 +1,4 @@
-import { typeDeleteCharacter, typeLoadCharacters, typePutCharacter, typeSetCharacters } from '../constants/action-constants'
+import { typeDeleteCharacter, typeLoadCharacters, typePutCharacter, typeSetResetFormFlag, typeSetCharacters } from '../constants/action-constants'
 
 export function deleteCharacter (id) {
   return {
@@ -24,5 +24,12 @@ export function setCharacters (characters) {
   return {
     type: typeSetCharacters,
     characters
+  }
+}
+
+export function setResetFormFlag (flag) {
+  return {
+    type: typeSetResetFormFlag,
+    flag
   }
 }

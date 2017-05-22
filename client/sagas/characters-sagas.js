@@ -1,5 +1,5 @@
 import { call, put } from 'redux-saga/effects'
-import { loadCharacters, setCharacters } from '../actions/character-actions'
+import { loadCharacters, setCharacters, setResetFormFlag } from '../actions/character-actions'
 
 const domainSagas = (charactersService) => {
   function* deleteCharacterSaga (action) {
@@ -24,6 +24,7 @@ const domainSagas = (charactersService) => {
     try {
       yield call(charactersService.putCharacter, action.character)
       yield put(loadCharacters())
+      yield put(setResetFormFlag(true))
     } catch (error) {
       console.log(error)
     }

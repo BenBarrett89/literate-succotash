@@ -11,6 +11,7 @@ const typeRandom = 'DOMAIN_RANDOM'
 const typeReset = 'DOMAIN_RESET'
 const typeSetCharacters = 'CHARACTERS_SET_CHARACTERS'
 const typeSetDomains = 'DOMAIN_SET_DOMAINS'
+const typeSetResetFormFlag = 'CHARACTERS_SET_RESET_FORM_FLAG'
 
 module.exports = {
   typeDecrement,
@@ -25,5 +26,6 @@ module.exports = {
   typeRandom,
   typeReset,
   typeSetCharacters,
-  typeSetDomains
+  typeSetDomains,
+  typeSetResetFormFlag
 }

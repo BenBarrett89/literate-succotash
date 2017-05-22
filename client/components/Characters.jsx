@@ -24,7 +24,7 @@ class Characters extends React.Component {
           {this.getCharacters().map((character, key) => {
             return (<Character key={key} character={character} delete={this.props.deleteCharacter} />)
           })}
-          <NewCharacter save={this.props.addCharacter} />
+          <NewCharacter save={this.props.addCharacter} resetForm={this.props.resetForm} setResetForm={this.props.setResetForm} />
         </Row>
       </Grid>
     )
@@ -34,7 +34,9 @@ class Characters extends React.Component {
 Characters.propTypes = {
   characters: PropTypes.arrayOf(PropTypes.object),
   addCharacter: PropTypes.func,
-  deleteCharacter: PropTypes.func
+  deleteCharacter: PropTypes.func,
+  resetForm: PropTypes.bool,
+  setResetFormFlag: PropTypes.func
 }
 
 export default Characters
